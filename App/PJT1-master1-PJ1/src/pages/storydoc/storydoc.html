@@ -1,0 +1,33 @@
+<!--
+  Generated template for the StorydocPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>บทความ</ion-title>
+    <ion-buttons right (click)="creat()">
+      <button ion-button icon-only outline color="dark">
+        <ion-icon ios="ios-add" md="md-add"></ion-icon>
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card *ngFor="let xs of items" (click)="read(xs.topic,xs.detail,xs.id_story)" >
+    <ion-card-header> หัวข้อ :
+     {{ xs.topic }}
+    </ion-card-header>
+    <ion-card-content> รายละเอียด :
+      {{ xs.detail }}
+    </ion-card-content>
+  </ion-card>
+
+
+</ion-content>
+

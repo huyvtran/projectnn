@@ -1,0 +1,8 @@
+{
+  "name": "water",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "app_id": ""
+}

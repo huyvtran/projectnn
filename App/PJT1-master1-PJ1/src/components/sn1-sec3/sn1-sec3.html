@@ -1,0 +1,329 @@
+
+
+
+<ion-simple-wizard [(step)]="step" [showSteps]="true" (finish)="onFinish()" [finishIcon]="'done-all'" [(stepCondition)]="stepCondition">
+    <ion-wizard-step>
+      <p><button ion-button  round outline style="font-size: 23px">ลำดับครัวเรือนสถานประกอบการในบ้าน/อาคาร/สิ่งปลูกสร้าง(ยูนิต)</button></p>
+      <ion-item style="margin-left:15px">
+        <ion-input placeholder="ลำดับครัวเรือนสถานประกอบการในบ้าน/อาคาร/สิ่งปลูกสร้าง(ยูนิต)" ></ion-input>
+      </ion-item>
+      <p><button ion-button  round outline>กรุณาเลือกผลการเข้าพบ </button></p>
+      <ion-item>         
+        <ion-select [(ngModel)]="os2" interface="popover" placeholder="กรุณาเลือกการเข้าพบ" interface="action-sheet" cancelText="ยกเลิก" style="background-color:whitesmoke;color: black;margin-left:15px">
+            <ion-option [value]=1>1.มีผู้ให้ข้อมูลให้ความร่วมมือ</ion-option>
+            <ion-option [value]=2>2.มีผู้ให้ข้อมูล แต่ไม่ให้ความร่วมมือ</ion-option>
+            <ion-option [value]=3>3.ไม่มี/ไม่พบผู้ให้ข้อมูล</ion-option>
+            <ion-option [value]=4>4.บ้าน/อาคาร ว่างหรือร้าง</ion-option>
+        </ion-select>
+  </ion-item>
+      <p><button ion-button  round outline>การแยกมิเตอร์น้ำประปา/น้ำบาดาล</button></p>
+      <ion-grid style="margin-left:25px">
+      <h4>  1.ใช้น้ำประปาหรือไม่</h4>
+      <ion-row radio-group >
+        <ion-col>
+          <ion-item>
+            <ion-radio item-left [value]=true></ion-radio>
+            <ion-label>ใช่</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-radio item-left [value]=false></ion-radio>
+            <ion-label>ไม่ใช่</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+        <h4>    2.มีมิเตอร์น้ำประปาแยกออกจากส่วนกลางหรือไม่</h4>
+        <ion-row radio-group >
+          <ion-col>
+            <ion-item>
+              <ion-radio item-left [value]=true></ion-radio>
+              <ion-label>ใช่</ion-label>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-radio item-left [value]=false></ion-radio>
+              <ion-label>ไม่ใช่</ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <h4>    3.ใช้น้ำบาดาลหรือไม่</h4>
+        <ion-row radio-group >
+          <ion-col>
+            <ion-item>
+              <ion-radio item-left [value]=true></ion-radio>
+              <ion-label>ใช่</ion-label>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-radio item-left [value]=false></ion-radio>
+              <ion-label>ไม่ใช่</ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <h4>    4.มีมิเตอร์น้ำบาดาลแยกออกจากส่วนกลางหรือไม่</h4>
+        <ion-row radio-group >
+          <ion-col>
+            <ion-item>
+              <ion-radio item-left [value]=true></ion-radio>
+              <ion-label>ใช่</ion-label>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-radio item-left [value]=false></ion-radio>
+              <ion-label>ไม่ใช่</ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <p><button ion-button  round outline>กิจกรรมการใช้น้ำ</button></p>
+      <ion-grid style="margin-left:25px">
+      <h4>  1.เพื่อการอุปโภคบริโภค:สถานที่นี้มีผู้อาศัยติดต่อกันนานเกิน 3 เดือนใช่หรือไม่</h4>
+      <ion-row radio-group >
+        <ion-col>
+          <ion-item>
+            <ion-radio item-left [value]=true></ion-radio>
+            <ion-label>ใช่</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-radio item-left [value]=false></ion-radio>
+            <ion-label>ไม่ใช่</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+        <h4>    2.เพื่อการเกษตร: สถานที่นี้มีผู้อาศัยมีการปลูกพืช เลี้ยงสัตว์ ทำการเกษตรเอง ใช่หรือไม่</h4>
+        <ion-row radio-group >
+          <ion-col>
+            <ion-item>
+              <ion-radio item-left [value]=true></ion-radio>
+              <ion-label>ใช่</ion-label>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-radio item-left [value]=false></ion-radio>
+              <ion-label>ไม่ใช่</ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <h4>    3.เพื่อการผลิต: สถานที่นี้ใช้เพื่อการผลิต ใช่หรือไม่</h4>
+        <ion-row radio-group >
+          <ion-col>
+            <ion-item>
+              <ion-radio item-left [value]=true></ion-radio>
+              <ion-label>ใช่</ion-label>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-radio item-left [value]=false></ion-radio>
+              <ion-label>ไม่ใช่</ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <h4>    4.เพื่อการบริการ: สถานที่นี้ใช้เพื่อทำการบริการ ใช่หรือไม่</h4>
+        <ion-row radio-group >
+          <ion-col>
+            <ion-item>
+              <ion-radio item-left [value]=true></ion-radio>
+              <ion-label>ใช่</ion-label>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-radio item-left [value]=false></ion-radio>
+              <ion-label>ไม่ใช่</ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+        <p><button ion-button  round outline (click)="presentPrompts()">ปัญหาและอุปสรรคที่พบ</button></p>
+    
+    <br>
+    <ion-buttons text-center>
+        <button ion-button round  >เริ่มสำรวจ สน.2-1</button>
+    </ion-buttons>
+    </ion-wizard-step>
+
+
+
+    <ion-wizard-step>
+      <p><button ion-button  round outline style="font-size: 23px">ลำดับครัวเรือนสถานประกอบการในบ้าน/อาคาร/สิ่งปลูกสร้าง(ยูนิต)</button></p>
+      <ion-item style="margin-left:15px">
+        <ion-input placeholder="ลำดับครัวเรือนสถานประกอบการในบ้าน/อาคาร/สิ่งปลูกสร้าง(ยูนิต)" ></ion-input>
+      </ion-item>
+      <p><button ion-button  round outline>กรุณาเลือกผลการเข้าพบ </button></p>
+      <ion-item>         
+        <ion-select [(ngModel)]="os2" interface="popover" placeholder="กรุณาเลือกการเข้าพบ" interface="action-sheet" cancelText="ยกเลิก" style="background-color:whitesmoke;color: black;margin-left:15px">
+            <ion-option [value]=1>1.มีผู้ให้ข้อมูลให้ความร่วมมือ</ion-option>
+            <ion-option [value]=2>2.มีผู้ให้ข้อมูล แต่ไม่ให้ความร่วมมือ</ion-option>
+            <ion-option [value]=3>3.ไม่มี/ไม่พบผู้ให้ข้อมูล</ion-option>
+            <ion-option [value]=4>4.บ้าน/อาคาร ว่างหรือร้าง</ion-option>
+        </ion-select>
+  </ion-item>
+      <p><button ion-button  round outline>กิจกรรมการใช้น้ำ</button></p>
+      <ion-grid style="margin-left:25px">
+      <h4>  1.เพื่อการอุปโภคบริโภค:สถานที่นี้มีผู้อาศัยติดต่อกันนานเกิน 3 เดือนใช่หรือไม่</h4>
+      <ion-row radio-group >
+        <ion-col>
+          <ion-item>
+            <ion-radio item-left [value]=true></ion-radio>
+            <ion-label>ใช่</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-radio item-left [value]=false></ion-radio>
+            <ion-label>ไม่ใช่</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+        <h4>    2.เพื่อการเกษตร: สถานที่นี้มีผู้อาศัยมีการปลูกพืช เลี้ยงสัตว์ ทำการเกษตรเอง ใช่หรือไม่</h4>
+        <ion-row radio-group >
+          <ion-col>
+            <ion-item>
+              <ion-radio item-left [value]=true></ion-radio>
+              <ion-label>ใช่</ion-label>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-radio item-left [value]=false></ion-radio>
+              <ion-label>ไม่ใช่</ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <h4>    3.เพื่อการผลิต: สถานที่นี้ใช้เพื่อการผลิต ใช่หรือไม่</h4>
+        <ion-row radio-group >
+          <ion-col>
+            <ion-item>
+              <ion-radio item-left [value]=true></ion-radio>
+              <ion-label>ใช่</ion-label>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-radio item-left [value]=false></ion-radio>
+              <ion-label>ไม่ใช่</ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <h4>    4.เพื่อการบริการ: สถานที่นี้ใช้เพื่อทำการบริการ ใช่หรือไม่</h4>
+        <ion-row radio-group >
+          <ion-col>
+            <ion-item>
+              <ion-radio item-left [value]=true></ion-radio>
+              <ion-label>ใช่</ion-label>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-radio item-left [value]=false></ion-radio>
+              <ion-label>ไม่ใช่</ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    <br>
+    <ion-buttons text-center>
+        <button ion-button round  >เริ่มสำรวจ สน.2-1</button>
+    </ion-buttons>
+  
+    </ion-wizard-step>
+
+
+    <ion-wizard-step>
+      <p><button ion-button  round outline style="font-size: 23px">ลำดับครัวเรือนสถานประกอบการในบ้าน/อาคาร/สิ่งปลูกสร้าง(ยูนิต)</button></p>
+      <ion-item style="margin-left:15px">
+        <ion-input placeholder="ลำดับครัวเรือนสถานประกอบการในบ้าน/อาคาร/สิ่งปลูกสร้าง(ยูนิต)" ></ion-input>
+      </ion-item>
+      <p><button ion-button  round outline>กรุณาเลือกผลการเข้าพบ </button></p>
+      <ion-item>         
+        <ion-select [(ngModel)]="os2" interface="popover" placeholder="กรุณาเลือกการเข้าพบ" interface="action-sheet" cancelText="ยกเลิก" style="background-color:whitesmoke;color: black;margin-left:15px">
+            <ion-option [value]=1>1.มีผู้ให้ข้อมูลให้ความร่วมมือ</ion-option>
+            <ion-option [value]=2>2.มีผู้ให้ข้อมูล แต่ไม่ให้ความร่วมมือ</ion-option>
+            <ion-option [value]=3>3.ไม่มี/ไม่พบผู้ให้ข้อมูล</ion-option>
+            <ion-option [value]=4>4.บ้าน/อาคาร ว่างหรือร้าง</ion-option>
+        </ion-select>
+  </ion-item>
+      <p><button ion-button  round outline>กิจกรรมการใช้น้ำ</button></p>
+      <ion-grid style="margin-left:25px">
+      <h4>  1.เพื่อการอุปโภคบริโภค:สถานที่นี้มีผู้อาศัยติดต่อกันนานเกิน 3 เดือนใช่หรือไม่</h4>
+      <ion-row radio-group >
+        <ion-col>
+          <ion-item>
+            <ion-radio item-left [value]=true></ion-radio>
+            <ion-label>ใช่</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-radio item-left [value]=false></ion-radio>
+            <ion-label>ไม่ใช่</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+        <h4>    2.เพื่อการเกษตร: สถานที่นี้มีผู้อาศัยมีการปลูกพืช เลี้ยงสัตว์ ทำการเกษตรเอง ใช่หรือไม่</h4>
+        <ion-row radio-group >
+          <ion-col>
+            <ion-item>
+              <ion-radio item-left [value]=true></ion-radio>
+              <ion-label>ใช่</ion-label>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-radio item-left [value]=false></ion-radio>
+              <ion-label>ไม่ใช่</ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <h4>    3.เพื่อการผลิต: สถานที่นี้ใช้เพื่อการผลิต ใช่หรือไม่</h4>
+        <ion-row radio-group >
+          <ion-col>
+            <ion-item>
+              <ion-radio item-left [value]=true></ion-radio>
+              <ion-label>ใช่</ion-label>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-radio item-left [value]=false></ion-radio>
+              <ion-label>ไม่ใช่</ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <h4>    4.เพื่อการบริการ: สถานที่นี้ใช้เพื่อทำการบริการ ใช่หรือไม่</h4>
+        <ion-row radio-group >
+          <ion-col>
+            <ion-item>
+              <ion-radio item-left [value]=true></ion-radio>
+              <ion-label>ใช่</ion-label>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-radio item-left [value]=false></ion-radio>
+              <ion-label>ไม่ใช่</ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+        <p><button ion-button  round outline>ปัญหาและอุปสรรคที่พบ</button></p>
+    <ion-item style="margin-left:15px">
+     
+    </ion-item>
+    
+    <br>
+    <ion-buttons text-center>
+        <button ion-button round  >เริ่มสำรวจ สน.2-1</button>
+    </ion-buttons>
+
+    </ion-wizard-step>
+</ion-simple-wizard>

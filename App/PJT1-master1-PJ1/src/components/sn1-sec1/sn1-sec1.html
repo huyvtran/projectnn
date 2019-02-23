@@ -1,0 +1,74 @@
+
+  <button ion-button round outline>ชื่อถนน/ลำน้ำ/ละแวกบ้าน</button>
+
+<ion-item >
+  <ion-input type="text" placeholder="ชื่อถนน/ลำน้ำ/ละแวกบ้าน"></ion-input>
+</ion-item>
+<p>
+  <button ion-button round outline>ชื่อตรอก/ซอย</button>
+</p>
+<ion-item >
+  <ion-input placeholder="ชื่อตรอก/ซอย" style="background-color:whitesmoke;color: black"></ion-input>
+</ion-item>
+<p>
+  <button ion-button round outline style="font-size: 23px">ชื่อหมู่บ้าน/คอนโด/อาคาร/สำนักงาน/สถานประกอบการ/สถาบัน/อื่นๆ</button>
+</p>
+<ion-item >
+  <ion-input placeholder="ชื่อหมู่บ้าน/คอนโด/อาคาร/สำนักงาน/สถานประกอบการ/สถาบัน/อื่น"></ion-input>
+</ion-item>
+<p>
+  <button ion-button round outline>เลขที่บ้าน/อาคาร</button>
+</p>
+<ion-item >
+  <ion-input placeholder="เลขที่บ้าน/อาคาร"></ion-input>
+</ion-item>
+<br>
+<button ion-button round outline style="font-size: 23px" (click)="loadMap()">ตำแหน่งปัจจุบัน</button>
+
+<p>latitude: {{lat}} longitude: {{lon}}</p>
+<p>
+  <button ion-button round style="font-size: 20px" outline>ประเภทบ้าน/อาคาร/สิ่งปลูกสร้าง</button>
+</p>
+<ion-item>
+  <ion-select [(ngModel)]="os1" interface="popover" placeholder="กรุณาเลือกประเภท" interface="action-sheet" cancelText="ยกเลิก"
+    style="background-color:whitesmoke;color: black;">
+    <ion-option value='1'>1.บ้านเดี่ยว</ion-option>
+    <ion-option value='2'>2.บ้านแฝด/ทาวน์เฮ้าส์</ion-option>
+    <ion-option value='3'>3.ห้องแถว/เรือนแถว/ตึกแถว</ion-option>
+    <ion-option value='4'>4.อาคารสูง(คอนโดฯ/แมนชั่น/แฟลต/อพาร์ทเมนท์)</ion-option>
+    <ion-option value='5'>5.อาคารสำนักงานเอกชน</ion-option>
+    <ion-option value='6'>6.โรงแรม/รีสอร์ท/เกสเฮาส์</ion-option>
+    <ion-option value='7'>7.สถานพยาบาล:ภาครัฐ</ion-option>
+    <ion-option value='8'>8.สถานพยาบาล:ภาคเอกชน</ion-option>
+    <ion-option value='9'>9.สถานที่ราชการ/รัฐวิสาหกิจ</ion-option>
+    <ion-option value='10'>10.ศาสนสถาน</ion-option>
+    <ion-option value='11'>11.สถานศึกษา:ภาครัฐ</ion-option>
+    <ion-option value='12'>12.สถานศึกษา:ภาคเอกชน</ion-option>
+    <ion-option value='13'>13.โกดัง/โรงงาน</ion-option>
+    <ion-option value='14'>14.โรงเรือนเพาะปลูก/เลี้ยงสัตว์</ion-option>
+    <ion-option value='15'>15.อาคารกำลังก่อสร้าง</ion-option>
+    <ion-option value='16'>16.อื่นๆ</ion-option>
+  </ion-select>
+</ion-item>
+
+
+<p>
+  <button ion-button round outline>กรุณาเลือกผลการเข้าพบ </button>
+</p>
+<ion-item>
+  <ion-select [(ngModel)]="os2" interface="popover" placeholder="กรุณาเลือกประเภท" interface="action-sheet" cancelText="ยกเลิก"
+    style="background-color:whitesmoke;color: black;">
+    <ion-option [value]=1>1.มีผู้ให้ข้อมูลให้ความร่วมมือ</ion-option>
+    <ion-option [value]=2>2.มีผู้ให้ข้อมูล แต่ไม่ให้ความร่วมมือ</ion-option>
+    <ion-option [value]=3>3.ไม่มี/ไม่พบผู้ให้ข้อมูล</ion-option>
+    <ion-option [value]=4>4.บ้าน/อาคาร ว่างหรือร้าง</ion-option>
+  </ion-select>
+</ion-item>
+<p>
+  <button ion-button round style="font-size: 20px" outline (click)="presentProblem()">ให้ขันทึกข้อความเกี่ยวกับ ปัญหา/อุปสรรค/การนัดหมาย/เหตุผล ที่นับจดไม่ได้</button>
+</p>
+<br>
+<br>
+<ion-buttons text-center>
+  <button ion-button large round (click)="submit()">ถัดไป ></button>
+</ion-buttons>
