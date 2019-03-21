@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams ,ToastController,App } from 'ionic-
 import { AuthServiceProvider } from '../../providers/auth-service';
 import { Storage } from '@ionic/storage';
 import { GamedocPage } from '../gamedoc/gamedoc';
+import { ShowmePage } from '../showme/showme';
 
 /**
  * Generated class for the EditgamebydocPage page.
@@ -20,15 +21,28 @@ export class EditgamebydocPage {
   getName:any
   getDetail:any
   getLink:any
+  public sid:any;
+  public data:string;
 
-  userData = {
+  public userData:any ={
     "id_game":"",
     "game_name":"",
     "game_detail":"",
     "game_link":""
   };
+  userDatap = {
+    "id_docter": ""
+  
+  };
+  userDetails = { "user_id": "" };
   public resposeData:any;
-  constructor(public app: App,public storage:Storage,public authService: AuthServiceProvider, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public app: App, private storage: Storage, public navCtrl: NavController, public navParams: NavParams, public authService: AuthServiceProvider, public toastCtrl: ToastController) {
+    this.storage.get('userData').then((val) => {
+        var val = JSON.parse(val);
+        this.userDetails.user_id = val;
+        this.sid = this.userDetails.user_id;
+        this.edit();
+      });   
     this.getName = navParams.get('named')
     this.getDetail = navParams.get('detaild')
     this.getLink = navParams.get('linkd')
@@ -39,11 +53,21 @@ export class EditgamebydocPage {
     console.log('ionViewDidLoad EditgamebydocPage');
   }
   edit(){
-    this.authService.PostData(this.userData,"editgame").then((result)=> {
+    this.userDatap.id_docter = this.sid;
+    this.authService.PostData(this.userDatap, "editgame").then((result) => {
       this.resposeData = result;
-      console.log(this.resposeData)
-     });
-    this.navCtrl.push(GamedocPage);
+      if (this.resposeData.docter) {
+        this.data = this.resposeData.patient;
+        console.log(this.data)
+      }
+      else {
+        console.log(this.resposeData, "not conn");
+      }
+      this.navCtrl.push(GamedocPage);
+    }, (err) => {
+      console.error(err);
+    });
+  
   }
 
 

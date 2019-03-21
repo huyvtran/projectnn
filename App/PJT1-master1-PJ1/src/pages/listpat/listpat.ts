@@ -17,14 +17,8 @@ import { SearchPage } from '../search/search';
 export class ListpatPage {
   
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-  
-    
-    
-    
+
   }
-  
-
-
   ionViewDidLoad() {
     console.log('ionViewDidLoad ListpatPage');
   }

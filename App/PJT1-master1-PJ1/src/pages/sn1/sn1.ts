@@ -14,6 +14,7 @@ import { ShowmePage } from '../showme/showme';
 import { ShowdrugPage } from '../showdrug/showdrug';
 import { ShowdocPage } from '../showdoc/showdoc';
 import { GamedocPage } from '../gamedoc/gamedoc';
+import { MapPage } from '../map/map';
 
 @Component({
   selector: 'page-sn1',
@@ -98,6 +99,7 @@ export class SN1 {
   p8(){
     this.navCtrl.push(P8Page);
   }
- 
-
+ map(){
+ this.navCtrl.push(MapPage);
+ }
 }

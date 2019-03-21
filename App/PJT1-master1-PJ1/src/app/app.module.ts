@@ -3,11 +3,8 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
-import { ComponentsModule } from '../components/components.module';
 import { MyApp } from './app.component';
 import { CallNumber } from '@ionic-native/call-number';
-
-
 import { SN1 } from '../pages/sn1/sn1';
 import { HomePage } from '../pages/home/home';
 import { Geolocation } from '@ionic-native/geolocation';
@@ -29,14 +26,11 @@ import { SearchPage } from '../pages/search/search';
 import { GamedocPage } from '../pages/gamedoc/gamedoc';
 import { ListpatPage } from '../pages/listpat/listpat';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AuthServiceProvider } from '../providers/auth-service';
 import { HttpModule } from '@angular/http';
 import { IonicStorageModule } from '@ionic/storage';
 import { ShowdocPage } from '../pages/showdoc/showdoc';
 import { MenudoctorPage } from '../pages/menudoctor/menudoctor';
-import { MaPage } from '../pages/ma/ma';
-import { MapPage } from '../pages/map/map';
 import { ForgotpassPage } from '../pages/forgotpass/forgotpass';
 import { StorydocPage } from '../pages/storydoc/storydoc';
 import { CreatstoryPage } from '../pages/creatstory/creatstory';
@@ -48,8 +42,8 @@ import { EditdrugPage } from '../pages/editdrug/editdrug';
 import { EditdatPage } from '../pages/editdat/editdat';
 import { StorybydocPage } from '../pages/storybydoc/storybydoc';
 import { EditgamebydocPage } from '../pages/editgamebydoc/editgamebydoc';
-
-
+import { MapPage } from '../pages/map/map'; 
+import { GoogleMapComponent } from '../components/google-map/google-map';
 @NgModule({
   declarations: [
     MyApp,
@@ -70,7 +64,6 @@ import { EditgamebydocPage } from '../pages/editgamebydoc/editgamebydoc';
     ShowdrugPage,
     ShowdocPage,
     MenudoctorPage,
-    MaPage,
     ForgotpassPage,
     SearchPage,
     GamedocPage,
@@ -85,14 +78,15 @@ import { EditgamebydocPage } from '../pages/editgamebydoc/editgamebydoc';
     EditdrugPage,
     EditdatPage,
     StorybydocPage,
-    EditgamebydocPage
+    EditgamebydocPage,
+    MapPage,
+    GoogleMapComponent
 
   ],
   imports: [
     BrowserModule,HttpModule,
     HttpClientModule,
-    IonicModule.forRoot(MyApp),IonicStorageModule.forRoot(),
-    ComponentsModule
+    IonicModule.forRoot(MyApp),IonicStorageModule.forRoot()
 
  
   ],
@@ -116,7 +110,6 @@ import { EditgamebydocPage } from '../pages/editgamebydoc/editgamebydoc';
     ShowdrugPage,
     ShowdocPage,
     MenudoctorPage,
-    MaPage,
     ForgotpassPage,
     SearchPage,
     GamedocPage,
@@ -131,7 +124,8 @@ import { EditgamebydocPage } from '../pages/editgamebydoc/editgamebydoc';
     EditdrugPage,
     EditdatPage,
     StorybydocPage,
-    EditgamebydocPage
+    EditgamebydocPage,
+    MapPage
     
   ],
   providers: [

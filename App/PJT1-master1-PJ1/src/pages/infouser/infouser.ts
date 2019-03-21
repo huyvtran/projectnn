@@ -53,8 +53,12 @@ export class InfouserPage {
       this.userDetails.user_id = val;
       this.sid = this.userDetails.user_id;
       this.getAccount();
-      //this.editAccount();
-  
+      this.editAccount();
+      this.infouser = navParams.get('userinfo');
+      console.log(this.infouser);
+      
+      
+      
     });
    
   }
@@ -86,23 +90,23 @@ export class InfouserPage {
     });
   }
 
-  // editAccount() {
-  //   this.userDatap.id_patient = this.sid;
-  //   this.authService.PostData(this.userDatap, "editAccountPatient").then((result) => {
-  //     this.resposeData = result;
-  //     if (this.resposeData.patient) {
-  //       this.data = this.resposeData.patient;
-  //       console.log(this.data)
-  //     }
-  //     else {
-  //       console.log(this.resposeData, "not conn");
-  //     }
-  //     this.navCtrl.push(ShowmePage);
-  //   }, (err) => {
-  //     console.error(err);
-  //   });
+  editAccount() {
+     this.userDatap.id_patient = this.sid;
+     this.authService.PostData(this.userDatap, "editAccountPatient").then((result) => {
+       this.resposeData = result;
+       if (this.resposeData.patient) {
+         this.data = this.resposeData.patient;
+         console.log(this.data)
+       }
+       else {
+         console.log(this.resposeData, "not conn");
+       }
+       this.navCtrl.push(ShowmePage);
+     }, (err) => {
+       console.error(err);
+     });
    
-  // }
+   }
   
   
 }

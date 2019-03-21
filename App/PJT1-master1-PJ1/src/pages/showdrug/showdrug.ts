@@ -41,6 +41,8 @@ constructor(public app: App,public storage:Storage,public authService: AuthServi
    var val = JSON.parse(val);
    this.userDetails.user_id = val;
    this.sid = this.userDetails.user_id;
+   console.log(this.sid);
+   
     console.log('ionViewDidLoa  d ShowdrugPageconStuc');
       this.showdrug();
    });
